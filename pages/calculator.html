@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Estimate your monthly payment or find out how much home you can afford. Compare Conventional, FHA, VA, and USDA loans for Arkansas and Oklahoma."/>
+<title>Mortgage Calculator | Conventional, FHA, VA &amp; USDA | River City Realty</title>
+<link rel="icon" type="image/png" href="/images/rcr-logo.png"/>
+<link rel="canonical" href="https://fsrivercityrealty.com/pages/calculator.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="River City Realty"/>
+<meta property="og:url" content="https://fsrivercityrealty.com/pages/calculator.html"/>
+<meta property="og:title" content="Mortgage Calculator | Conventional, FHA, VA &amp; USDA | River City Realty"/>
+<meta property="og:description" content="Estimate your monthly payment or find out how much home you can afford. Compare Conventional, FHA, VA, and USDA loans for Arkansas and Oklahoma."/>
+<meta property="og:image" content="https://fsrivercityrealty.com/images/rcr-logo.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Mortgage Calculator | Conventional, FHA, VA &amp; USDA | River City Realty"/>
+<meta name="twitter:description" content="Estimate your monthly payment or find out how much home you can afford. Compare Conventional, FHA, VA, and USDA loans for Arkansas and Oklahoma."/>
+<meta name="robots" content="index, follow"/>
+<meta name="geo.region" content="US-AR"/>
+<meta name="geo.placename" content="Fort Smith, Arkansas"/>
+<link rel="stylesheet" href="../css/styles.css"/>
+<style>
+  html, body { max-width: 100%; overflow-x: hidden; }
+  .calc-hero {
+    background: #2b2725; padding: 150px 56px 80px; position: relative;
+    overflow: hidden; text-align: center; width: 100%;
+  }
+  .calc-hero-bg {
+    position: absolute; top:0; left:0; right:0; bottom:0;
+    background-image: url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=80");
+    background-size: cover; background-position: center; opacity: 0.14;
+  }
+  .calc-hero-inner { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; }
+  .calc-hero .rcr-eyebrow { font-family: Georgia, serif; font-style: italic;
+    font-size: 15px; color: rgba(255,255,255,0.55); margin-bottom: 12px; }
+  .calc-hero h1 { font-family: Georgia, serif; font-size: 46px; font-weight: 400;
+    color: #fff; line-height: 1.1; margin-bottom: 16px; }
+  .calc-hero p { font-size: 16px; color: rgba(255,255,255,0.62); line-height: 1.65; }
+
+  .calc-tabs { display: flex; justify-content: center; gap: 0; background: #faf8f5;
+    border-bottom: 1px solid #ece8e2; }
+  .calc-tab { padding: 18px 34px; font-size: 14px; color: #777; background: none;
+    border: none; border-bottom: 3px solid transparent; cursor: pointer;
+    font-family: inherit; transition: all 0.18s; }
+  .calc-tab:hover { color: #c0392b; }
+  .calc-tab.active { color: #c0392b; border-bottom-color: #c0392b; font-weight: 500; }
+
+  .calc-wrap { max-width: 1080px; margin: 0 auto; padding: 56px 56px 80px;
+    display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: start; }
+  .calc-panel { display: none; }
+  .calc-panel.active { display: contents; }
+
+  .calc-fields { display: flex; flex-direction: column; gap: 22px; }
+  .calc-field label { display: block; font-size: 12px; font-weight: 600; color: #444;
+    letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 6px; }
+  .calc-field input, .calc-field select {
+    width: 100%; padding: 13px 16px; border: 1.5px solid #e0dbd4; border-radius: 8px;
+    font-size: 15px; color: #222; font-family: inherit; background: #fff; outline: none;
+    box-sizing: border-box; transition: border-color 0.2s; }
+  .calc-field input:focus, .calc-field select:focus { border-color: #c0392b; }
+  .calc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .calc-hint { font-size: 12px; color: #999; margin-top: 5px; line-height: 1.5; }
+
+  .calc-loantypes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .calc-loantype { padding: 12px 6px; border: 1.5px solid #e0dbd4; border-radius: 8px;
+    background: #fff; cursor: pointer; text-align: center; font-size: 13px; color: #555;
+    font-family: inherit; transition: all 0.18s; }
+  .calc-loantype:hover { border-color: #9fb4d4; }
+  .calc-loantype.active { border-color: #c0392b; background: #eef2f9; color: #c0392b; font-weight: 500; }
+
+  .calc-result { background: #faf8f5; border: 1px solid #e8e3dc; border-radius: 12px;
+    padding: 32px 30px; position: sticky; top: 24px; }
+  .calc-result-label { font-family: Georgia, serif; font-style: italic; font-size: 14px;
+    color: #c0392b; margin-bottom: 8px; }
+  .calc-result-big { font-family: Georgia, serif; font-size: 42px; color: #c0392b;
+    line-height: 1.05; margin-bottom: 4px; }
+  .calc-result-sub { font-size: 13px; color: #888; margin-bottom: 26px; }
+  .calc-breakdown { border-top: 1px solid #e8e3dc; padding-top: 18px; }
+  .calc-line { display: flex; justify-content: space-between; font-size: 14px;
+    color: #555; padding: 7px 0; }
+  .calc-line span:last-child { color: #1a1a1a; font-weight: 500; }
+  .calc-line.total { border-top: 1px solid #e8e3dc; margin-top: 10px; padding-top: 14px;
+    font-weight: 600; color: #c0392b; }
+  .calc-note { font-size: 12px; color: #999; line-height: 1.6; margin-top: 20px;
+    padding-top: 16px; border-top: 1px solid #e8e3dc; }
+  .calc-cta { display: block; text-align: center; margin-top: 20px; padding: 13px;
+    background: #c0392b; color: #fff; border-radius: 8px; text-decoration: none;
+    font-size: 14px; transition: background 0.2s; }
+  .calc-cta:hover { background: #9e2d22; }
+
+  .calc-disclaimer { max-width: 1080px; margin: 0 auto; padding: 0 56px 72px;
+    font-size: 12px; color: #999; line-height: 1.7; }
+
+  @media (max-width: 900px) {
+    .calc-hero { padding: 120px 24px 56px; }
+    .calc-hero h1 { font-size: 32px; }
+    .calc-wrap { grid-template-columns: 1fr; gap: 36px; padding: 36px 24px 56px; }
+    .calc-result { position: static; }
+    .calc-tab { padding: 15px 20px; font-size: 13px; }
+    .calc-loantypes { grid-template-columns: 1fr 1fr; }
+    .calc-disclaimer { padding: 0 24px 48px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="rcr-mobile-menu" id="mobileMenu">
+  <button class="rcr-mobile-close" onclick="closeMenu()">&times;</button>
+  <a href="../index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="agents.html">Our Team</a>
+  <a href="guide.html">Buying &amp; Selling</a>
+  <a href="https://homes.fsrivercityrealty.com/idx/map/mapsearch">Search</a>
+  <a href="contact.html">Contact Us</a>
+</div>
+
+<nav class="rcr-nav">
+  <div class="rcr-nav-logo">
+    <a href="../index.html"><img src="../images/rcr-logo.png" alt="River City Realty, LLC" /></a>
+  </div>
+  <div class="rcr-nav-links">
+    <a href="../index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="agents.html">Our Team</a>
+    <a href="guide.html">Buying &amp; Selling</a>
+    <a href="https://homes.fsrivercityrealty.com/idx/map/mapsearch">Search</a>
+    <button class="rcr-nav-cta" onclick="window.location.href='contact.html'">Contact Us</button>
+  </div>
+  <button class="rcr-hamburger" onclick="openMenu()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="calc-hero">
+  <div class="calc-hero-bg"></div>
+  <div class="calc-hero-inner">
+    <p class="rcr-eyebrow">Run the numbers</p>
+    <h1>What Will It Actually Cost?</h1>
+    <p>Estimate a monthly payment, or work backward from your income to see what you can comfortably afford. Conventional, FHA, VA, and USDA all included.</p>
+  </div>
+</div>
+
+<div class="calc-tabs">
+  <button class="calc-tab active" id="tabPayment" onclick="showTab('payment')">Monthly Payment</button>
+  <button class="calc-tab" id="tabAfford" onclick="showTab('afford')">What Can I Afford?</button>
+</div>
+
+<!-- ══ PAYMENT ══ -->
+<div class="calc-wrap" id="panelPayment">
+  <div class="calc-fields">
+    <div class="calc-field">
+      <label>Loan Type</label>
+      <div class="calc-loantypes">
+        <button class="calc-loantype active" data-loan="conv" onclick="setLoan('conv')">Conventional</button>
+        <button class="calc-loantype" data-loan="fha" onclick="setLoan('fha')">FHA</button>
+        <button class="calc-loantype" data-loan="va" onclick="setLoan('va')">VA</button>
+        <button class="calc-loantype" data-loan="usda" onclick="setLoan('usda')">USDA</button>
+      </div>
+      <p class="calc-hint" id="loanHint">Standard loan. Mortgage insurance applies if you put down less than 20%.</p>
+    </div>
+
+    <div class="calc-row">
+      <div class="calc-field">
+        <label for="price">Home Price</label>
+        <input type="number" id="price" value="250000" min="0" step="1000"/>
+      </div>
+      <div class="calc-field">
+        <label for="down">Down Payment (%)</label>
+        <input type="number" id="down" value="20" min="0" max="100" step="0.5"/>
+        <p class="calc-hint" id="downHint"></p>
+      </div>
+    </div>
+
+    <div class="calc-row">
+      <div class="calc-field">
+        <label for="rate">Interest Rate (%)</label>
+        <input type="number" id="rate" value="6.5" min="0" max="20" step="0.125"/>
+      </div>
+      <div class="calc-field">
+        <label for="term">Loan Term</label>
+        <select id="term">
+          <option value="30" selected>30 years</option>
+          <option value="20">20 years</option>
+          <option value="15">15 years</option>
+          <option value="10">10 years</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="calc-row">
+      <div class="calc-field">
+        <label for="tax">Property Tax (yearly)</label>
+        <input type="number" id="tax" value="1800" min="0" step="50"/>
+        <p class="calc-hint">River Valley average runs roughly 0.6&ndash;0.8% of value.</p>
+      </div>
+      <div class="calc-field">
+        <label for="ins">Home Insurance (yearly)</label>
+        <input type="number" id="ins" value="1600" min="0" step="50"/>
+      </div>
+    </div>
+
+    <div class="calc-field">
+      <label for="hoa">HOA Dues (monthly)</label>
+      <input type="number" id="hoa" value="0" min="0" step="5"/>
+    </div>
+  </div>
+
+  <div class="calc-result">
+    <p class="calc-result-label">Estimated monthly payment</p>
+    <div class="calc-result-big" id="outTotal">$0</div>
+    <p class="calc-result-sub" id="outSub">principal, interest, taxes &amp; insurance</p>
+    <div class="calc-breakdown">
+      <div class="calc-line"><span>Principal &amp; interest</span><span id="outPI">$0</span></div>
+      <div class="calc-line"><span>Property tax</span><span id="outTax">$0</span></div>
+      <div class="calc-line"><span>Home insurance</span><span id="outIns">$0</span></div>
+      <div class="calc-line" id="lineMI"><span id="miLabel">Mortgage insurance</span><span id="outMI">$0</span></div>
+      <div class="calc-line" id="lineHOA"><span>HOA dues</span><span id="outHOA">$0</span></div>
+      <div class="calc-line total"><span>Total</span><span id="outTotal2">$0</span></div>
+    </div>
+    <p class="calc-note" id="outNote"></p>
+    <a class="calc-cta" href="contact.html">Talk to an agent</a>
+  </div>
+</div>
+
+<!-- ══ AFFORDABILITY ══ -->
+<div class="calc-wrap" id="panelAfford" style="display:none;">
+  <div class="calc-fields">
+    <div class="calc-row">
+      <div class="calc-field">
+        <label for="income">Gross Household Income (yearly)</label>
+        <input type="number" id="income" value="85000" min="0" step="1000"/>
+        <p class="calc-hint">Before taxes, everyone on the loan combined.</p>
+      </div>
+      <div class="calc-field">
+        <label for="debts">Monthly Debt Payments</label>
+        <input type="number" id="debts" value="500" min="0" step="25"/>
+        <p class="calc-hint">Car loans, student loans, credit card minimums, child support.</p>
+      </div>
+    </div>
+
+    <div class="calc-row">
+      <div class="calc-field">
+        <label for="aDown">Cash for Down Payment</label>
+        <input type="number" id="aDown" value="30000" min="0" step="1000"/>
+      </div>
+      <div class="calc-field">
+        <label for="aRate">Interest Rate (%)</label>
+        <input type="number" id="aRate" value="6.5" min="0" max="20" step="0.125"/>
+      </div>
+    </div>
+
+    <div class="calc-field">
+      <label for="dti">Debt-to-Income Limit (%)</label>
+      <select id="dti">
+        <option value="36">36% &mdash; conservative</option>
+        <option value="43" selected>43% &mdash; typical qualifying limit</option>
+        <option value="50">50% &mdash; aggressive, strong credit only</option>
+      </select>
+      <p class="calc-hint">The share of gross income lenders will let go toward all debt including the new mortgage.</p>
+    </div>
+  </div>
+
+  <div class="calc-result">
+    <p class="calc-result-label">You could likely afford</p>
+    <div class="calc-result-big" id="outAfford">$0</div>
+    <p class="calc-result-sub">estimated maximum home price</p>
+    <div class="calc-breakdown">
+      <div class="calc-line"><span>Max total monthly debt</span><span id="outMaxDebt">$0</span></div>
+      <div class="calc-line"><span>Less existing debts</span><span id="outLessDebt">$0</span></div>
+      <div class="calc-line total"><span>Available for housing</span><span id="outAvail">$0</span></div>
+    </div>
+    <p class="calc-note">Assumes taxes and insurance at roughly 1.4% of home value per year, which is typical for this area. Your actual numbers depend on credit, the specific property, and your lender.</p>
+    <a class="calc-cta" href="contact.html">Talk to an agent</a>
+  </div>
+</div>
+
+<p class="calc-disclaimer">
+  These calculators provide estimates for planning purposes only and are not a loan offer, pre-approval, or
+  commitment to lend. Mortgage insurance rates, funding fees, and guarantee fees change and vary by lender,
+  credit profile, and loan program. VA eligibility requires qualifying military service. USDA loans require the
+  property to be in an eligible rural area and are subject to household income limits. For real numbers, talk to
+  a licensed lender &mdash; we're happy to point you toward local ones we work with regularly.
+</p>
+
+<footer class="rcr-footer">
+  <div class="rcr-footer-grid">
+    <div>
+      <div class="rcr-footer-logo">
+        <a href="../index.html"><img src="../images/rcr-logo.png" alt="River City Realty, LLC" /></a>
+      </div>
+      <p class="rcr-footer-tagline">Real estate across the River Valley and eastern Oklahoma.<br/>Principal Broker: Shelly Blaylock.</p>
+      <div class="rcr-footer-social">
+        <a href="https://www.facebook.com/FSRiverCityRealty" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="rcr-footer-col">
+      <p class="rcr-footer-col-title">Search</p>
+      <a href="https://homes.fsrivercityrealty.com/i/homes-for-sale-in-fort-smith-arkansas">Fort Smith</a>
+      <a href="https://homes.fsrivercityrealty.com/i/homes-for-sale-in-van-buren-arkansas">Van Buren</a>
+      <a href="https://homes.fsrivercityrealty.com/i/homes-for-sale-in-greenwood-arkansas">Greenwood</a>
+      <a href="https://homes.fsrivercityrealty.com/idx/results/homes?idxID=d124&amp;pt=1&amp;city[]=37583&amp;a_propStatus[]=Active&amp;srt=newest">Poteau</a>
+    </div>
+    <div class="rcr-footer-col">
+      <p class="rcr-footer-col-title">Our Office</p>
+      <p>4720 Rogers Avenue<br/>Fort Smith, AR 72903<br/><br/>(479) 782-9500</p>
+    </div>
+  </div>
+  <div class="rcr-footer-bottom">
+    <span class="rcr-footer-copy">&copy; 2026 River City Realty, LLC. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+(function(){
+  var loan = 'conv';
+  var LOANS = {
+    conv: { minDown: 3,   upfront: 0,      annualMI: 0.0055, miEndsAt20: true,
+            hint: 'Standard loan. Mortgage insurance applies if you put down less than 20%.' },
+    fha:  { minDown: 3.5, upfront: 0.0175, annualMI: 0.0055, miEndsAt20: false,
+            hint: 'Lower credit requirements. 1.75% upfront MIP is financed into the loan, and annual MIP usually stays for the life of the loan.' },
+    va:   { minDown: 0,   upfront: 0.0215, annualMI: 0,      miEndsAt20: false,
+            hint: 'For qualifying veterans and service members. No down payment and no monthly mortgage insurance. A one-time funding fee applies.' },
+    usda: { minDown: 0,   upfront: 0.01,   annualMI: 0.0035, miEndsAt20: false,
+            hint: 'For eligible rural areas &mdash; much of the River Valley outside Fort Smith qualifies. No down payment. Household income limits apply.' }
+  };
+  function $(id){ return document.getElementById(id); }
+  function money(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+  function num(id){ var v = parseFloat($(id).value); return isNaN(v) ? 0 : v; }
+
+  window.showTab = function(which){
+    var p = which === 'payment';
+    $('panelPayment').style.display = p ? 'grid' : 'none';
+    $('panelAfford').style.display  = p ? 'none' : 'grid';
+    $('tabPayment').classList.toggle('active', p);
+    $('tabAfford').classList.toggle('active', !p);
+  };
+
+  window.setLoan = function(t){
+    loan = t;
+    document.querySelectorAll('.calc-loantype').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-loan') === t);
+    });
+    $('loanHint').innerHTML = LOANS[t].hint;
+    var d = $('down');
+    if (parseFloat(d.value) < LOANS[t].minDown) d.value = LOANS[t].minDown;
+    if ((t === 'va' || t === 'usda') && parseFloat(d.value) === 20) d.value = 0;
+    if (t === 'conv' && parseFloat(d.value) === 0) d.value = 5;
+    calc();
+  };
+
+  function calc(){
+    var cfg = LOANS[loan];
+    var price = num('price'), downPct = num('down');
+    if (downPct < cfg.minDown) { downPct = cfg.minDown; $('down').value = downPct; }
+    var downAmt = price * downPct / 100;
+    var base = price - downAmt;
+    var upfront = base * cfg.upfront;
+    var principal = base + upfront;
+
+    var r = num('rate') / 100 / 12, n = num('term') * 12, pi;
+    if (r === 0) { pi = n ? principal / n : 0; }
+    else { pi = principal * r * Math.pow(1+r, n) / (Math.pow(1+r, n) - 1); }
+
+    var mi = 0;
+    if (cfg.annualMI > 0 && !(cfg.miEndsAt20 && downPct >= 20)) mi = base * cfg.annualMI / 12;
+
+    var tax = num('tax')/12, ins = num('ins')/12, hoa = num('hoa');
+    var total = pi + tax + ins + mi + hoa;
+
+    $('outPI').textContent = money(pi);
+    $('outTax').textContent = money(tax);
+    $('outIns').textContent = money(ins);
+    $('outMI').textContent = money(mi);
+    $('outHOA').textContent = money(hoa);
+    $('outTotal').textContent = money(total);
+    $('outTotal2').textContent = money(total);
+    $('lineMI').style.display = mi > 0 ? 'flex' : 'none';
+    $('lineHOA').style.display = hoa > 0 ? 'flex' : 'none';
+    $('miLabel').textContent = (loan === 'fha') ? 'Mortgage insurance (MIP)'
+                             : (loan === 'usda') ? 'Annual guarantee fee'
+                             : 'Mortgage insurance (PMI)';
+    $('downHint').textContent = money(downAmt) + ' down' +
+      (cfg.minDown > 0 ? ' \u00b7 ' + cfg.minDown + '% minimum' : ' \u00b7 no minimum');
+
+    var note = '';
+    if (upfront > 0) note += money(upfront) + ' ' +
+      (loan === 'va' ? 'VA funding fee' : loan === 'usda' ? 'USDA guarantee fee' : 'upfront MIP') +
+      ' financed into the loan. ';
+    if (loan === 'conv' && downPct >= 20) note += 'No mortgage insurance at 20% down or more. ';
+    note += 'Loan amount ' + money(principal) + '.';
+    $('outNote').textContent = note;
+  }
+
+  function calcAfford(){
+    var monthlyIncome = num('income')/12;
+    var maxDebt = monthlyIncome * num('dti')/100;
+    var avail = maxDebt - num('debts');
+    if (avail < 0) avail = 0;
+
+    // Reserve ~1.4%/yr of value for taxes + insurance, solve for price.
+    var r = num('aRate')/100/12, n = 360;
+    var piFactor = (r === 0) ? 1/n : r * Math.pow(1+r,n) / (Math.pow(1+r,n) - 1);
+    var cash = num('aDown');
+    // avail = price*0.014/12 + (price - cash)*piFactor  ->  solve for price
+    var price = (avail + cash * piFactor) / (0.014/12 + piFactor);
+    if (price < cash) price = cash;
+
+    $('outMaxDebt').textContent = money(maxDebt);
+    $('outLessDebt').textContent = '\u2212 ' + money(num('debts'));
+    $('outAvail').textContent = money(avail);
+    $('outAfford').textContent = money(price);
+  }
+
+  ['price','down','rate','term','tax','ins','hoa'].forEach(function(id){
+    $(id).addEventListener('input', calc);
+    $(id).addEventListener('change', calc);
+  });
+  ['income','debts','aDown','aRate','dti'].forEach(function(id){
+    $(id).addEventListener('input', calcAfford);
+    $(id).addEventListener('change', calcAfford);
+  });
+
+  calc(); calcAfford();
+})();
+</script>
+</body>
+</html>

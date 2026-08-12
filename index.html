@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Search every listing in the Western River Valley. Locally owned real estate brokerage serving Fort Smith, Van Buren, Greenwood, and Chaffee Crossing since 1993."/>
+<title>Homes for Sale in Fort Smith, Van Buren &amp; Greenwood AR | River City Realty</title>
+<link rel="icon" type="image/png" href="/images/rcr-logo.png"/>
+<link rel="canonical" href="https://fsrivercityrealty.com/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="River City Realty"/>
+<meta property="og:url" content="https://fsrivercityrealty.com/"/>
+<meta property="og:title" content="Homes for Sale in Fort Smith, Van Buren &amp; Greenwood AR | River City Realty"/>
+<meta property="og:description" content="Search every listing in the Western River Valley. Locally owned real estate brokerage serving Fort Smith, Van Buren, Greenwood, and Chaffee Crossing since 1993."/>
+<meta property="og:image" content="https://fsrivercityrealty.com/images/rcr-logo.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Homes for Sale in Fort Smith, Van Buren &amp; Greenwood AR | River City Realty"/>
+<meta name="twitter:description" content="Search every listing in the Western River Valley. Locally owned real estate brokerage serving Fort Smith, Van Buren, Greenwood, and Chaffee Crossing since 1993."/>
+<meta name="robots" content="index, follow"/>
+<meta name="geo.region" content="US-AR"/>
+<meta name="geo.placename" content="Fort Smith, Arkansas"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "RealEstateAgent",
+      "@id": "https://fsrivercityrealty.com/#organization",
+      "name": "River City Realty, LLC",
+      "url": "https://fsrivercityrealty.com/",
+      "logo": "https://fsrivercityrealty.com/images/rcr-logo.png",
+      "image": "https://fsrivercityrealty.com/images/rcr-logo.png",
+      "telephone": "+1-479-782-9500",
+      "description": "Independently operated real estate brokerage serving Fort Smith, the Arkansas River Valley, and eastern Oklahoma. Residential, land, and commercial.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4720 Rogers Avenue",
+        "addressLocality": "Fort Smith",
+        "addressRegion": "AR",
+        "postalCode": "72903",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Arkansas"
+        },
+        {
+          "@type": "State",
+          "name": "Oklahoma"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/FSRiverCityRealty"
+      ],
+      "priceRange": "$$"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://fsrivercityrealty.com/#website",
+      "url": "https://fsrivercityrealty.com/",
+      "name": "River City Realty",
+      "publisher": {
+        "@id": "https://fsrivercityrealty.com/#organization"
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="rcr-mobile-menu" id="mobileMenu">
+  <button class="rcr-mobile-close" onclick="closeMenu()">&times;</button>
+  <a href="index.html">Home</a>
+  <a href="pages/about.html">About</a>
+  <a href="pages/agents.html">Our Team</a>
+  <a href="pages/guide.html">Buying &amp; Selling</a>
+  <a href="https://homes.fsrivercityrealty.com/idx/map/mapsearch">Search</a>
+  <a href="pages/contact.html">Contact Us</a>
+</div>
+
+<!-- NAV -->
+<nav class="rcr-nav">
+  <div class="rcr-nav-logo">
+    <a href="index.html"><img src="images/rcr-logo.png" alt="River City Realty, LLC" /></a>
+  </div>
+  <div class="rcr-nav-links">
+    <a href="index.html">Home</a>
+    <a href="pages/about.html">About</a>
+      <a href="pages/agents.html">Our Team</a>
+    <a href="pages/guide.html">Buying &amp; Selling</a>
+    <a href="https://homes.fsrivercityrealty.com/idx/map/mapsearch">Search</a>
+      <button class="rcr-nav-cta" onclick="window.location.href='pages/contact.html'">Contact Us</button>
+  </div>
+  <button class="rcr-hamburger" onclick="openMenu()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="rcr-hero">
+  <div class="rcr-hero-bg"></div>
+  <div class="rcr-hero-content">
+    <p class="rcr-hero-eyebrow">Fort Smith &middot; Arkansas &amp; Oklahoma</p>
+    <h1 class="rcr-hero-headline">Real Estate in the River Valley.</h1>
+    <p class="rcr-hero-sub">Every listing in the River Valley and eastern Oklahoma — searched simply, found fast.</p>
+    <div class="rcr-search-wrap">
+      <div class="rcr-search-tabs">
+        <button class="rcr-search-tab active" id="tabAddress" onclick="switchTab('address')">Search by address</button>
+        <button class="rcr-search-tab" id="tabAI" onclick="switchTab('ai')">&#10024; Describe your home</button>
+      </div>
+      <div class="rcr-search-bar">
+        <input class="rcr-search-input" id="cfrHeroInput" type="text" placeholder="City or ZIP — Fort Smith, Van Buren, Poteau, 72903..." />
+        <button class="rcr-search-btn" id="cfrHeroBtn">Search Homes</button>
+      </div>
+    </div>
+    <div class="rcr-search-adv">
+      <a class="rcr-adv-link" href="https://homes.fsrivercityrealty.com/idx/search/advanced">Advanced search &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED LISTINGS -->
+<div class="rcr-listings-section fade-in">
+  <p class="rcr-eyebrow">Homes worth seeing</p>
+  <h2 class="rcr-section-title">What's on the Market</h2>
+  <p class="rcr-section-sub">Fresh listings from the Western River Valley MLS. Updated daily — no stale data, no dead ends.</p>
+  <div class="rcr-idx-widget-wrap" id="rcr-idx-wrap">
+    <script charset="UTF-8" type="text/javascript" id="idxwidgetsrc-165004" src="//homes.fsrivercityrealty.com/idx/widgets/165004"></script>
+  </div>
+  <div class="rcr-quick-links">
+    <span class="rcr-quick-label">Looking for something specific?</span>
+    <a href="https://homes.fsrivercityrealty.com/i/newly-listed-homes-for-sale">Newly Listed</a>
+    <a href="https://homes.fsrivercityrealty.com/i/lots-land-greater-fort-smith-arkansas">Land &amp; Lots</a>
+    <a href="https://homes.fsrivercityrealty.com/i/commercial-property-greater-fort-smith-arkansas">Commercial</a>
+    <a href="https://homes.fsrivercityrealty.com/i/homes-for-sale-greater-fort-smith-arkansas">All Listings</a>
+    <a href="pages/guide.html">Buying &amp; Selling</a>
+    <a href="pages/calculator.html">Mortgage Calculator</a>
+  </div>
+</div>
+
+<!-- SELLER CTA -->
+<section class="rcr-seller-section fade-in">
+  <p class="rcr-seller-eyebrow">Ready to move on?</p>
+  <h2 class="rcr-seller-title">Your Home Has More Value Than You Think.</h2>
+  <p class="rcr-seller-sub">Get a real estimate based on what's actually selling in your neighborhood right now — no obligation, no pressure, no sales pitch.</p>
+  <a class="rcr-seller-btn" href="https://homes.fsrivercityrealty.com/idx/homevaluation">See What My Home Is Worth</a>
+</section>
+
+<!-- TRUST ROW -->
+<div class="rcr-trust-row fade-in">
+  <div class="rcr-trust-row-inner">
+    <div class="rcr-trust-item">
+      <div class="rcr-trust-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+      </div>
+      <div>
+        <div class="rcr-trust-num">River Valley Roots</div>
+        <div class="rcr-trust-label">Buying, selling, land and commercial</div>
+      </div>
+    </div>
+    <div class="rcr-trust-item">
+      <div class="rcr-trust-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      </div>
+      <div>
+        <div class="rcr-trust-num">Two States</div>
+        <div class="rcr-trust-label">Arkansas &amp; Oklahoma &mdash; one team, both sides of the line</div>
+      </div>
+    </div>
+    <div class="rcr-trust-item">
+      <div class="rcr-trust-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div>
+        <div class="rcr-trust-num">Local &amp; Independent</div>
+        <div class="rcr-trust-label">Licensed in AR and OK</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AGENTS -->
+<div class="rcr-section fade-in">
+  <p class="rcr-eyebrow">The people behind the signs</p>
+  <h2 class="rcr-section-title">Agents Who Know This Market</h2>
+  <p class="rcr-section-sub" style="margin-bottom:0;">A small team by design. You work with the person you called, start to finish.</p>
+  <div class="rcr-agents-grid">
+    <div class="rcr-agent-card">
+      <div class="rcr-agent-photo-wrap">
+        <img src="https://s3.amazonaws.com/clientphotos.idxbroker.com/agents/agentPhoto-3683-16681" alt="Shelly Blaylock" loading="lazy" onerror="this.remove();"/>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </div>
+      <div class="rcr-agent-name">Shelly Blaylock</div>
+      <div class="rcr-agent-role">AR Principal Broker &amp; OK Managing Broker</div>
+      <a class="rcr-agent-link" href="https://homes.fsrivercityrealty.com/idx/agent/16681/shelly-blaylock">View listings &rarr;</a>
+    </div>
+    <div class="rcr-agent-card">
+      <div class="rcr-agent-photo-wrap">
+        <img src="https://s3.amazonaws.com/clientphotos.idxbroker.com/agents/agentPhoto-3683-16682" alt="Glenda Edwards" loading="lazy" onerror="this.remove();"/>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </div>
+      <div class="rcr-agent-name">Glenda Edwards</div>
+      <div class="rcr-agent-role">AR &amp; OK Executive Broker</div>
+      <a class="rcr-agent-link" href="https://homes.fsrivercityrealty.com/idx/agent/16682/glenda-edwards">View listings &rarr;</a>
+    </div>
+    <div class="rcr-agent-card">
+      <div class="rcr-agent-photo-wrap">
+        <img src="https://s3.amazonaws.com/clientphotos.idxbroker.com/agents/agentPhoto-3683-15895324" alt="Rodney Oden" loading="lazy" onerror="this.remove();"/>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </div>
+      <div class="rcr-agent-name">Rodney Oden</div>
+      <div class="rcr-agent-role">AR Executive Broker &amp; OK Sales Associate</div>
+      <a class="rcr-agent-link" href="https://homes.fsrivercityrealty.com/idx/agent/15895324/rodney-oden">View listings &rarr;</a>
+    </div>
+    <div class="rcr-agent-card">
+      <div class="rcr-agent-photo-wrap">
+        <img src="https://s3.amazonaws.com/clientphotos.idxbroker.com/agents/agentPhoto-3683-16683" alt="Cindy McClendon" loading="lazy" onerror="this.remove();"/>
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </div>
+      <div class="rcr-agent-name">Cindy McClendon</div>
+      <div class="rcr-agent-role">AR &amp; OK Sales Associate</div>
+      <a class="rcr-agent-link" href="https://homes.fsrivercityrealty.com/idx/agent/16683/cindy-mcclendon">View listings &rarr;</a>
+    </div>
+  </div>
+  <a class="rcr-btn-outline" style="margin-top:28px;" href="pages/agents.html">More about our team &rarr;</a>
+</div>
+
+<!-- OFFICES -->
+<div class="rcr-offices-outer fade-in">
+  <div class="rcr-offices-inner">
+    <p class="rcr-eyebrow">Come find us</p>
+    <h2 class="rcr-section-title">Come See Us on Rogers Avenue</h2>
+    <div class="rcr-offices-grid" style="grid-template-columns:1fr;max-width:420px;margin:0 auto;">
+      <div class="rcr-office-card">
+        <div class="rcr-office-city">Fort Smith</div>
+        <div class="rcr-office-addr">4720 Rogers Avenue<br/>Fort Smith, AR 72903</div>
+        <div class="rcr-office-phone">(479) 782-9500</div>
+        <a class="rcr-office-fb" href="https://www.facebook.com/FSRiverCityRealty" target="_blank" rel="noopener">Facebook &rarr;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="rcr-footer">
+  <div class="rcr-footer-grid">
+    <div>
+      <div class="rcr-footer-logo">
+        <a href="index.html"><img src="images/rcr-logo.png" alt="River City Realty, LLC" /></a>
+      </div>
+      <p class="rcr-footer-tagline">Real estate across the River Valley and eastern Oklahoma.<br/>Principal Broker: Shelly Blaylock.</p>
+      <div class="rcr-footer-social">
+        <a href="https://www.facebook.com/FSRiverCityRealty" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="rcr-footer-col">
+      <p class="rcr-footer-col-title">Search</p>
+      <a href="https://homes.fsrivercityrealty.com/i/homes-for-sale-in-fort-smith-arkansas">Fort Smith</a>
+      <a href="https://homes.fsrivercityrealty.com/i/homes-for-sale-in-van-buren-arkansas">Van Buren</a>
+      <a href="https://homes.fsrivercityrealty.com/i/homes-for-sale-in-greenwood-arkansas">Greenwood</a>
+      <a href="https://homes.fsrivercityrealty.com/idx/results/homes?idxID=d124&amp;pt=1&amp;city[]=37583&amp;a_propStatus[]=Active&amp;srt=newest">Poteau</a>
+    </div>
+    <div class="rcr-footer-col">
+      <p class="rcr-footer-col-title">Main Office</p>
+      <p>4720 Rogers Avenue<br/>Fort Smith, AR 72903<br/><br/>(479) 782-9500</p>
+    </div>
+  </div>
+  <div class="rcr-footer-bottom">
+    <span class="rcr-footer-copy">&copy; 2026 River City Realty, LLC. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+/* Hero search — wired to verified IDX endpoints */
+(function(){
+  var IDX = 'https://homes.fsrivercityrealty.com';
+  var mode = 'address';
+  var input = document.getElementById('cfrHeroInput');
+  var btn   = document.getElementById('cfrHeroBtn');
+
+  /* main.js already binds its own handler to these and sends everything to
+     /idx/search/advanced?q=. Cloning the nodes drops every existing listener
+     so ours is the only one that runs. */
+  var cInput = input.cloneNode(true); input.parentNode.replaceChild(cInput, input); input = cInput;
+  var cBtn   = btn.cloneNode(true);   btn.parentNode.replaceChild(cBtn, btn);       btn   = cBtn;
+  var tA    = document.getElementById('tabAddress');
+  var tI    = document.getElementById('tabAI');
+
+  window.switchTab = function(which){
+    mode = which;
+    tA.classList.toggle('active', which === 'address');
+    tI.classList.toggle('active', which === 'ai');
+    input.placeholder = (which === 'ai')
+      ? 'Describe it — "3 bedroom with a shop and an open kitchen"'
+      : 'City or ZIP \u2014 Fort Smith, Van Buren, Greenwood, 72903...';
+    input.focus();
+  };
+
+  var LINKS = {
+    'fort smith':'homes-for-sale-in-fort-smith-arkansas',
+    'fortsmith':'homes-for-sale-in-fort-smith-arkansas',
+    'chaffee':'homes-for-sale-in-fort-smith-arkansas',
+    'van buren':'homes-for-sale-in-van-buren-arkansas',
+    'vanburen':'homes-for-sale-in-van-buren-arkansas',
+    'greenwood':'homes-for-sale-in-greenwood-arkansas',
+    'alma':'homes-for-sale-in-alma-arkansas',
+    'crawford':'homes-for-sale-crawford-county',
+    'franklin':'homes-for-sale-franklin-county',
+    'sebastian':'homes-for-sale-sebastian-county',
+    'sequoyah':'homes-for-sale-sequoyah-county',
+    'logan':'homes-for-sale-logan-county',
+    'leflore':'homes-for-sale-leflore-county',
+    'le flore':'homes-for-sale-leflore-county'
+  };
+  var ZIPS = {
+    '72901':'fort smith','72902':'fort smith','72903':'fort smith','72904':'fort smith',
+    '72908':'fort smith','72916':'fort smith','72917':'fort smith','72919':'fort smith',
+    '72956':'van buren','72957':'van buren','72936':'greenwood','72921':'alma'
+  };
+  var ADDRESS  = IDX + '/idx/results/homes?ccz=city&pt=sfr&aw_address=';
+
+  function resolve(q){
+    var s = q.toLowerCase().trim();
+    var zip = s.match(/\b(7\d{4})\b/);
+    if (zip && ZIPS[zip[1]]) return LINKS[ZIPS[zip[1]]];
+    for (var key in LINKS) { if (s.indexOf(key) !== -1) return LINKS[key]; }
+    return null;
+  }
+
+  /* ---- AI search -------------------------------------------------------
+     Hands the phrase to our Netlify function, which interprets it, builds a
+     constrained IDX URL, verifies the result count server-side, and returns a
+     URL we can trust. If it fails or takes too long for any reason, we fall
+     straight back to the keyword search this tab used before. The visitor
+     never sees an error, only results. */
+  var AI_ENDPOINT = '/.netlify/functions/ai-search';
+  var AI_TIMEOUT  = 9000;
+  var aiPending   = false;
+
+  function keywordFallback(q){
+    window.location.href = IDX + '/idx/results/homes?pm_publicRemarks='
+      + encodeURIComponent(q) + '&srt=rel';
+  }
+
+  function aiSearch(q){
+    if (aiPending) return;
+    aiPending = true;
+
+    var restore = btn.textContent;
+    btn.textContent = 'Searching\u2026';
+    btn.disabled = true;
+
+    var done = false;
+    function finish(url){
+      if (done) return;
+      done = true;
+      if (url) { window.location.href = url; }
+      else     { keywordFallback(q); }
+    }
+
+    var timer = setTimeout(function(){
+      btn.textContent = restore;
+      btn.disabled = false;
+      aiPending = false;
+      finish(null);
+    }, AI_TIMEOUT);
+
+    fetch(AI_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ q: q })
+    })
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      clearTimeout(timer);
+      finish(d && d.url ? d.url : null);
+    })
+    .catch(function(){
+      clearTimeout(timer);
+      finish(null);
+    });
+  }
+
+  function go(){
+    var q = (input.value || '').trim();
+    if (!q) { input.focus(); return; }
+    if (mode === 'ai') {
+      aiSearch(q);
+    } else {
+      var link = resolve(q);
+      /* Known city or ZIP -> that saved search. Anything else is treated as a
+         street address and passed straight to IDX's address results. */
+      window.location.href = link
+        ? (IDX + '/i/' + link)
+        : (ADDRESS + encodeURIComponent(q));
+    }
+  }
+
+  function handle(e){
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+    go();
+    return false;
+  }
+  /* Back/forward cache: browsers restore the page with the DOM frozen exactly as
+     it was when the visitor navigated away — including a disabled "Searching..."
+     button. Reset it whenever the page is shown again. */
+  function resetBtn(){
+    aiPending = false;
+    btn.disabled = false;
+    btn.textContent = 'Search Homes';
+  }
+  window.addEventListener('pageshow', resetBtn);
+  window.addEventListener('pagehide', resetBtn);
+
+  /* Capture phase so this runs before any delegated handler on document/body. */
+  btn.addEventListener('click', handle, true);
+  input.addEventListener('keydown', function(e){
+    if (e.key === 'Enter' || e.keyCode === 13) return handle(e);
+  }, true);
+})();
+</script>
+</body>
+</html>

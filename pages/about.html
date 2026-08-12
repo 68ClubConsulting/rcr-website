@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="River City Realty is a Fort Smith brokerage licensed in Arkansas and Oklahoma. Residential, land, and commercial across the River Valley."/>
+<title>About River City Realty | Fort Smith, Arkansas</title>
+<link rel="icon" type="image/png" href="/images/rcr-logo.png"/>
+<link rel="canonical" href="https://fsrivercityrealty.com/pages/about.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="River City Realty"/>
+<meta property="og:url" content="https://fsrivercityrealty.com/pages/about.html"/>
+<meta property="og:title" content="About River City Realty | Fort Smith, Arkansas"/>
+<meta property="og:description" content="River City Realty is a Fort Smith brokerage licensed in Arkansas and Oklahoma. Residential, land, and commercial across the River Valley."/>
+<meta property="og:image" content="https://fsrivercityrealty.com/images/rcr-logo.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="About River City Realty | Fort Smith, Arkansas"/>
+<meta name="twitter:description" content="River City Realty is a Fort Smith brokerage licensed in Arkansas and Oklahoma. Residential, land, and commercial across the River Valley."/>
+<meta name="robots" content="index, follow"/>
+<meta name="geo.region" content="US-AR"/>
+<meta name="geo.placename" content="Fort Smith, Arkansas"/>
+<link rel="stylesheet" href="../css/styles.css"/>
+<style>
+  html, body { max-width: 100%; overflow-x: hidden; }
+
+  .about-hero {
+    background: #2b2725; padding: 150px 56px 72px;
+    position: relative; overflow: hidden; text-align: center; width: 100%;
+  }
+  .about-hero-bg {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=1600&q=80");
+    background-size: cover; background-position: center; opacity: 0.22;
+  }
+  .about-hero-content { position: relative; z-index: 2; max-width: 680px; margin: 0 auto; }
+  .about-hero-eyebrow {
+    font-family: Georgia, serif; font-style: italic;
+    font-size: 15px; color: rgba(255,255,255,0.55); margin-bottom: 12px;
+  }
+  .about-hero-title {
+    font-family: Georgia, serif; font-size: 48px; font-weight: 400;
+    color: #fff; line-height: 1.1; margin-bottom: 16px;
+  }
+  .about-hero-sub { font-size: 16px; color: rgba(255,255,255,0.62); line-height: 1.65; }
+
+  .about-stats {
+    background: #faf8f5; border-bottom: 1px solid #ece8e2;
+    display: flex; justify-content: center;
+  }
+  .about-stat {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 28px 56px; border-right: 1px solid #ece8e2; flex: 1; max-width: 280px;
+  }
+  .about-stat:last-child { border-right: none; }
+  .about-stat-num {
+    font-family: Georgia, serif; font-size: 36px; font-weight: 400;
+    color: #c0392b; line-height: 1;
+  }
+  .about-stat-label { font-size: 12px; color: #888; margin-top: 6px; text-align: center; line-height: 1.4; }
+
+  .about-story { max-width: 800px; margin: 0 auto; padding: 80px 56px; }
+  .about-story-eyebrow {
+    font-family: Georgia, serif; font-style: italic;
+    font-size: 14px; color: #c0392b; margin-bottom: 12px;
+  }
+  .about-story-title {
+    font-family: Georgia, serif; font-size: 36px; font-weight: 400;
+    color: #1a1a1a; line-height: 1.2; margin-bottom: 28px;
+  }
+  .about-story p { font-size: 16px; color: #444; line-height: 1.85; margin-bottom: 20px; }
+  .about-story p:last-child { margin-bottom: 0; }
+
+  .about-pillars-outer { background: #faf8f5; padding: 80px 0; }
+  .about-pillars-inner { max-width: 1100px; margin: 0 auto; padding: 0 56px; }
+  .about-pillars-header { margin-bottom: 48px; }
+  .about-pillars-header .eyebrow {
+    font-family: Georgia, serif; font-style: italic;
+    font-size: 14px; color: #c0392b; margin-bottom: 10px;
+  }
+  .about-pillars-header h2 {
+    font-family: Georgia, serif; font-size: 34px; font-weight: 400; color: #1a1a1a;
+  }
+  .about-pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .about-pillar {
+    background: #fff; border: 1px solid #e8e3dc; border-radius: 10px; padding: 32px 28px;
+  }
+  .about-pillar-icon {
+    width: 44px; height: 44px; border-radius: 50%; background: #eef2f9;
+    border: 1px solid #d8e2f0; display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
+  }
+  .about-pillar-icon svg { width: 20px; height: 20px; stroke: #c0392b; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .about-pillar h3 {
+    font-family: Georgia, serif; font-size: 18px; font-weight: 400;
+    color: #c0392b; margin-bottom: 10px;
+  }
+  .about-pillar p { font-size: 14px; color: #555; line-height: 1.7; }
+
+  .about-contact-cta { background: #c0392b; padding: 72px 56px; text-align: center; }
+  .about-contact-cta .eyebrow {
+    font-family: Georgia, serif; font-style: italic;
+    font-size: 15px; color: rgba(255,255,255,0.45); margin-bottom: 12px;
+  }
+  .about-contact-cta h2 {
+    font-family: Georgia, serif; font-size: 32px; font-weight: 400;
+    color: #fff; margin-bottom: 12px;
+  }
+  .about-contact-cta p { font-size: 15px; color: rgba(255,255,255,0.55); margin-bottom: 28px; }
+  .about-contact-btn {
+    display: inline-block; padding: 14px 32px; background: #fff; color: #c0392b;
+    font-size: 14px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: background 0.2s;
+  }
+  .about-contact-btn:hover { background: #f0ece6; }
+
+  @media (max-width: 900px) {
+    .about-hero { padding: 120px 24px 56px; }
+    .about-hero-title { font-size: 34px; }
+    .about-stats { flex-wrap: wrap; }
+    .about-stat { border-right: none; border-bottom: 1px solid #ece8e2; max-width: 100%; width: 50%; padding: 20px 24px; }
+    .about-stat:nth-child(odd) { border-right: 1px solid #ece8e2; }
+    .about-stat:nth-last-child(-n+2) { border-bottom: none; }
+    .about-story { padding: 56px 24px; }
+    .about-story-title { font-size: 28px; }
+    .about-pillars-inner { padding: 0 24px; }
+    .about-pillars-grid { grid-template-columns: 1fr; }
+    .about-contact-cta { padding: 56px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="rcr-mobile-menu" id="mobileMenu">
+  <button class="rcr-mobile-close" onclick="closeMenu()">&times;</button>
+  <a href="../index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="agents.html">Our Team</a>
+  <a href="guide.html">Buying &amp; Selling</a>
+  <a href="https://homes.fsrivercityrealty.com/idx/map/mapsearch">Search</a>
+  <a href="contact.html">Contact Us</a>
+</div>
+
+<nav class="rcr-nav">
+  <div class="rcr-nav-logo">
+    <a href="../index.html"><img src="../images/rcr-logo.png" alt="River City Realty, LLC" /></a>
+  </div>
+  <div class="rcr-nav-links">
+    <a href="../index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="agents.html">Our Team</a>
+    <a href="guide.html">Buying &amp; Selling</a>
+    <a href="https://homes.fsrivercityrealty.com/idx/map/mapsearch">Search</a>
+    <button class="rcr-nav-cta" onclick="window.location.href='contact.html'">Contact Us</button>
+  </div>
+  <button class="rcr-hamburger" onclick="openMenu()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="about-hero">
+  <div class="about-hero-bg"></div>
+  <div class="about-hero-content">
+    <p class="about-hero-eyebrow">Fort Smith, Arkansas</p>
+    <h1 class="about-hero-title">Small Team. Long Memory.</h1>
+    <p class="about-hero-sub">Six agents working out of one office on Rogers Avenue, licensed on both sides of the state line. You get the person you called, start to finish.</p>
+  </div>
+</div>
+
+<div class="about-stats">
+  <div class="about-stat">
+    <div class="about-stat-num">2</div>
+    <div class="about-stat-label">States — licensed in Arkansas and Oklahoma</div>
+  </div>
+  <div class="about-stat">
+    <div class="about-stat-num">1</div>
+    <div class="about-stat-label">Office — 4720 Rogers Avenue, Fort Smith</div>
+  </div>
+  <div class="about-stat">
+    <div class="about-stat-num">6</div>
+    <div class="about-stat-label">Agents, every one of them local</div>
+  </div>
+  <div class="about-stat">
+    <div class="about-stat-num">Full</div>
+    <div class="about-stat-label">Service — residential, land, and commercial</div>
+  </div>
+</div>
+
+<div class="about-story">
+  <p class="about-story-eyebrow">Our story</p>
+  <h2 class="about-story-title">One Office, Both States.</h2>
+  <p>River City Realty is a Fort Smith brokerage working the Arkansas River Valley and eastern Oklahoma. We are small on purpose. There is one office, on Rogers Avenue, and when you call it you reach someone who will still be your contact when the deal closes.</p>
+  <p>Being licensed in both states matters more here than most places. The line runs right through this market — a family relocating for a job at Fort Smith often ends up looking in Pocola or Poteau, and a seller in Van Buren regularly fields offers from buyers who work in Oklahoma. Our agents can represent you on either side of it without handing you off to somebody else's brokerage.</p>
+  <p>We handle residential, land, and commercial. We also do a good deal of work most brokerages in this market don't take on, which has taught us how to move a property that needs a specific kind of buyer rather than a general one. That experience shows up in how we price, how we photograph, and how quickly we can tell you what something is actually worth.</p>
+</div>
+
+<div class="about-pillars-outer">
+  <div class="about-pillars-inner">
+    <div class="about-pillars-header">
+      <p class="eyebrow">How we work</p>
+      <h2>What You Can Expect From Us</h2>
+    </div>
+    <div class="about-pillars-grid">
+      <div class="about-pillar">
+        <div class="about-pillar-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Community First</h3>
+        <p>We're not just working here — we live here. Our agents are involved in the communities they serve, which means they bring genuine local knowledge to every conversation, not just MLS data.</p>
+      </div>
+      <div class="about-pillar">
+        <div class="about-pillar-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Honest Guidance</h3>
+        <p>We take our fiduciary duty seriously. You'll get straight answers — not just what you want to hear. Our clients are confident that we prioritize their interests at every step of the transaction.</p>
+      </div>
+      <div class="about-pillar">
+        <div class="about-pillar-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>Trained and Current</h3>
+        <p>Our brokers hold executive and principal licenses in both states and keep current on continuing education. When a question comes up mid-transaction, the answer is in the building.</p>
+      </div>
+      <div class="about-pillar">
+        <div class="about-pillar-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+        </div>
+        <h3>Full Network</h3>
+        <p>Real estate is a team sport. We work closely with local lenders, title companies, and industry professionals to make sure every transaction has the right people around the table.</p>
+      </div>
+      <div class="about-pillar">
+        <div class="about-pillar-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h3>Client for Life</h3>
+        <p>We're not closing a deal and moving on. Our relationships with clients outlast the transaction — and in a market this size, that reputation is everything.</p>
+      </div>
+      <div class="about-pillar">
+        <div class="about-pillar-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>No Franchise Overhead</h3>
+        <p>As an independent brokerage, we're not paying franchise fees or following a national playbook. That means our focus stays exactly where it belongs — on you and your transaction.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="about-contact-cta">
+  <p class="eyebrow">Ready to get started?</p>
+  <h2>Let's Talk About Your Next Move.</h2>
+  <p>Whether you're buying, selling, or just getting oriented — our team is here to help.</p>
+  <a class="about-contact-btn" href="contact.html">Contact Us</a>
+</div>
+
+<footer class="rcr-footer">
+  <div class="rcr-footer-grid">
+    <div>
+      <div class="rcr-footer-logo">
+        <a href="../index.html"><img src="../images/rcr-logo.png" alt="River City Realty, LLC" /></a>
+      </div>
+      <p class="rcr-footer-tagline">Real estate across the River Valley and eastern Oklahoma.<br/>Principal Broker: Shelly Blaylock.</p>
+      <div class="rcr-footer-social">
+        <a href="https://www.facebook.com/FSRiverCityRealty" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="rcr-footer-col">
+      <p class="rcr-footer-col-title">Search</p>
+      <a href="https://homes.fsrivercityrealty.com/i/homes-for-sale-in-fort-smith-arkansas">Fort Smith</a>
+      <a href="https://homes.fsrivercityrealty.com/i/homes-for-sale-in-van-buren-arkansas">Van Buren</a>
+      <a href="https://homes.fsrivercityrealty.com/i/homes-for-sale-in-greenwood-arkansas">Greenwood</a>
+      <a href="https://homes.fsrivercityrealty.com/idx/results/homes?idxID=d124&amp;pt=1&amp;city[]=37583&amp;a_propStatus[]=Active&amp;srt=newest">Poteau</a>
+    </div>
+    <div class="rcr-footer-col">
+      <p class="rcr-footer-col-title">Our Office</p>
+      <p>4720 Rogers Avenue<br/>Fort Smith, AR 72903<br/><br/>(479) 782-9500</p>
+    </div>
+  </div>
+  <div class="rcr-footer-bottom">
+    <span class="rcr-footer-copy">&copy; 2026 River City Realty, LLC. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
