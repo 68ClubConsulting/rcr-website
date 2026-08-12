@@ -8,7 +8,21 @@
 <link rel="stylesheet" href="https://fsrivercityrealty.netlify.app/css/styles.css"/>
 <style>
   html, body { max-width: 100%; overflow-x: hidden; }
-  .idx-content { min-height: 60vh; }
+  /* The site nav floats over a dark hero photo, so its links are white and
+     absolutely positioned. IDX pages have no hero — without this the nav is
+     white-on-white and the page opens with a large empty gap. Here it becomes
+     a normal solid bar. */
+  .rcr-nav {
+    position: static !important;
+    background: #2b2725;
+    padding: 14px 56px;
+  }
+  .rcr-nav-logo img { height: 56px; }
+  .idx-content { min-height: 60vh; padding: 32px 56px 64px; }
+  @media (max-width: 900px) {
+    .rcr-nav { padding: 12px 20px; }
+    .idx-content { padding: 20px 16px 48px; }
+  }
 </style>
 </head>
 <body>
