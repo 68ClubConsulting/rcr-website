@@ -3,34 +3,70 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>River City Realty</title>
-<link rel="icon" type="image/png" href="https://fsrivercityrealty.netlify.app/images/rcr-logo.png"/>
+<title>Search Homes — River City Realty</title>
+
+<!-- Absolute paths required: this page renders on homes.fsrivercityrealty.com -->
 <link rel="stylesheet" href="https://fsrivercityrealty.netlify.app/css/styles.css"/>
+
 <style>
-  html, body { max-width: 100%; overflow-x: hidden; }
-  /* The site nav floats over a dark hero photo, so its links are white and
-     absolutely positioned. IDX pages have no hero — without this the nav is
-     white-on-white and the page opens with a large empty gap. Here it becomes
-     a normal solid bar. */
+  /* Solid nav bar: no hero behind it on IDX pages, and the site nav is
+     absolutely positioned white-on-transparent by default. */
   .rcr-nav {
-    position: static !important;
-    background: #2b2725;
-    padding: 14px 56px;
+    position: static; background: #2b2725; width: 100%; padding: 14px 56px;
   }
   .rcr-nav-logo img { height: 56px; }
-  .idx-content { min-height: 60vh; padding: 32px 56px 64px; }
+
+  /* IDX injects its markup between the idxStart / idxStop markers below.
+     styles.css has a global "* { margin:0; padding:0 }" reset that would
+     flatten IDX's typography, so restore sane defaults inside this zone only. */
+  .idx-content {
+    max-width: 1400px; margin: 0 auto; padding: 32px 24px 64px;
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    color: #222; line-height: 1.55; min-height: 55vh;
+  }
+  .idx-content p { margin: 0 0 1em; }
+  .idx-content ul, .idx-content ol { margin: 0 0 1em; padding-left: 1.4em; }
+  .idx-content li { margin-bottom: 0.35em; }
+  .idx-content h1, .idx-content h2, .idx-content h3,
+  .idx-content h4, .idx-content h5, .idx-content h6 {
+    font-family: Georgia, serif; font-weight: 400; color: #c0392b;
+    margin: 0 0 0.5em; line-height: 1.25;
+  }
+  .idx-content h1 { font-size: 34px; }
+  .idx-content h2 { font-size: 26px; }
+  .idx-content h3 { font-size: 20px; }
+  .idx-content table { margin-bottom: 1em; }
+  .idx-content td, .idx-content th { padding: 6px 10px; }
+  .idx-content a { color: #c0392b; }
+  .idx-content img { max-width: 100%; }
+
+  /* Buttons and inputs picked up from IDX get our shape, not their defaults */
+  .idx-content input[type="text"], .idx-content input[type="email"],
+  .idx-content input[type="tel"], .idx-content select, .idx-content textarea {
+    padding: 10px 13px; border: 1.5px solid #e0dbd4; border-radius: 8px;
+    font-size: 14px; font-family: inherit; background: #fff;
+  }
+  .idx-content button, .idx-content input[type="submit"],
+  .idx-content .btn, .idx-content .IDX-button {
+    background: #c0392b; color: #fff; border: none; border-radius: 8px;
+    padding: 11px 24px; font-size: 14px; font-family: inherit; cursor: pointer;
+  }
+  .idx-content button:hover, .idx-content input[type="submit"]:hover,
+  .idx-content .btn:hover, .idx-content .IDX-button:hover { background: #9e2d22; }
+
   @media (max-width: 900px) {
     .rcr-nav { padding: 12px 20px; }
-    .idx-content { padding: 20px 16px 48px; }
+    .idx-content { padding: 20px 14px 48px; }
+    .idx-content h1 { font-size: 26px; }
   }
 </style>
 </head>
 <body>
 
-
+<!-- MOBILE MENU -->
 <div class="rcr-mobile-menu" id="mobileMenu">
   <button class="rcr-mobile-close" onclick="closeMenu()">&times;</button>
-  <a href="https://fsrivercityrealty.netlify.app/">Home</a>
+  <a href="https://fsrivercityrealty.netlify.app/index.html">Home</a>
   <a href="https://fsrivercityrealty.netlify.app/pages/about.html">About</a>
   <a href="https://fsrivercityrealty.netlify.app/pages/agents.html">Our Team</a>
   <a href="https://fsrivercityrealty.netlify.app/pages/guide.html">Buying &amp; Selling</a>
@@ -38,12 +74,13 @@
   <a href="https://fsrivercityrealty.netlify.app/pages/contact.html">Contact Us</a>
 </div>
 
+<!-- NAV -->
 <nav class="rcr-nav">
   <div class="rcr-nav-logo">
-    <a href="https://fsrivercityrealty.netlify.app/"><img src="https://fsrivercityrealty.netlify.app/images/rcr-logo.png" alt="River City Realty, LLC" /></a>
+    <a href="https://fsrivercityrealty.netlify.app/index.html"><img src="https://fsrivercityrealty.netlify.app/images/rcr-logo.png" alt="River City Realty, LLC" /></a>
   </div>
   <div class="rcr-nav-links">
-    <a href="https://fsrivercityrealty.netlify.app/">Home</a>
+    <a href="https://fsrivercityrealty.netlify.app/index.html">Home</a>
     <a href="https://fsrivercityrealty.netlify.app/pages/about.html">About</a>
     <a href="https://fsrivercityrealty.netlify.app/pages/agents.html">Our Team</a>
     <a href="https://fsrivercityrealty.netlify.app/pages/guide.html">Buying &amp; Selling</a>
@@ -55,19 +92,21 @@
   </button>
 </nav>
 
-
 <!-- ==========  IDX CONTENT ZONE  ==========
      Everything IDX serves gets injected between these two markers.
      Do not remove, rename, or put anything between them. -->
 <div class="idx-content">
+  <div id="idxStart"></div>
+  <div id="idxStop"></div>
 </div>
 <!-- ========  END IDX CONTENT ZONE  ======== -->
 
+<!-- FOOTER -->
 <footer class="rcr-footer">
   <div class="rcr-footer-grid">
     <div>
       <div class="rcr-footer-logo">
-        <a href="https://fsrivercityrealty.netlify.app/"><img src="https://fsrivercityrealty.netlify.app/images/rcr-logo.png" alt="River City Realty, LLC" /></a>
+        <a href="https://fsrivercityrealty.netlify.app/index.html"><img src="https://fsrivercityrealty.netlify.app/images/rcr-logo.png" alt="River City Realty, LLC" /></a>
       </div>
       <p class="rcr-footer-tagline">Real estate across the River Valley and eastern Oklahoma.<br/>Principal Broker: Shelly Blaylock.</p>
       <div class="rcr-footer-social">
@@ -90,7 +129,6 @@
     <span class="rcr-footer-copy">&copy; 2026 River City Realty, LLC. All rights reserved.</span>
   </div>
 </footer>
-
 
 <script src="https://fsrivercityrealty.netlify.app/js/main.js"></script>
 </body>
