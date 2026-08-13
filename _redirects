@@ -1,0 +1,44 @@
+# ─── Canonical host ──────────────────────────────────────────────
+# The netlify.app subdomain serves a complete working copy of the site.
+# Left alone, Google can index it as duplicate content and split ranking
+# signals across two hostnames. The trailing ! forces the rule even when
+# a matching file exists.
+https://fsrivercityrealty.netlify.app/*  https://fsrivercityrealty.com/:splat  301!
+http://fsrivercityrealty.netlify.app/*   https://fsrivercityrealty.com/:splat  301!
+
+# ─── Old WordPress URLs → new site ───────────────────────────────
+# Source: fsrivercityrealty.com/wp-sitemap-posts-page-1.xml (10 URLs)
+# 301 = permanent. Preserves search ranking through the migration.
+
+# The three tips pages are the only real content the old site had, and
+# they all map to the combined Buying & Selling guide.
+/tips-for-buyers                 /pages/guide.html                301
+/tips-for-buyers/                /pages/guide.html                301
+/tips-for-sellers                /pages/guide.html                301
+/tips-for-sellers/               /pages/guide.html                301
+/tips-for-buyers/find-a-builder  /pages/guide.html                301
+/tips-for-buyers/find-a-builder/ /pages/guide.html                301
+
+/contact                         /pages/contact.html              301
+/contact/                        /pages/contact.html              301
+
+# Seller valuation — IDX hosts the tool, so this goes to the subdomain
+# rather than to a page on this site.
+/free-home-evaluation   https://homes.fsrivercityrealty.com/idx/homevaluation   301
+/free-home-evaluation/  https://homes.fsrivercityrealty.com/idx/homevaluation   301
+
+# The old /cities/ and /counties/ pages were link directories into IDX.
+# Map Search replaces both and lets the visitor pick either.
+/cities     https://homes.fsrivercityrealty.com/idx/map/mapsearch   301
+/cities/    https://homes.fsrivercityrealty.com/idx/map/mapsearch   301
+/counties   https://homes.fsrivercityrealty.com/idx/map/mapsearch   301
+/counties/  https://homes.fsrivercityrealty.com/idx/map/mapsearch   301
+
+# There is no newly-listed saved link in IDX account 3683, so this points
+# at a direct query instead: residential, active, listed in the last 7 days.
+/newly-listed-homes-for-sale   https://homes.fsrivercityrealty.com/idx/results/homes?idxID=d124&pt=1&add=7&a_propStatus[]=Active&srt=newest   301
+/newly-listed-homes-for-sale/  https://homes.fsrivercityrealty.com/idx/results/homes?idxID=d124&pt=1&add=7&a_propStatus[]=Active&srt=newest   301
+
+# NOTE: /idx-wrapper/ is deliberately NOT redirected. It is served by
+# idx-wrapper/index.html so IDX Broker's Global wrapper URL keeps working
+# unchanged after DNS moves. IDX cannot follow redirects.
