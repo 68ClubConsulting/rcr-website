@@ -3,12 +3,8 @@
 # Left alone, Google can index it as duplicate content and split ranking
 # signals across two hostnames. The trailing ! forces the rule even when
 # a matching file exists.
-# ⚠️ COMMENTED OUT UNTIL AFTER DNS FLIP.
-# While the domain still points at the old site, these send the staging
-# URL to the old site instead of ours. Uncomment both lines once
-# fsrivercityrealty.com is serving from Netlify.
-# https://fsrivercityrealty.netlify.app/*  https://fsrivercityrealty.com/:splat  301!
-# http://fsrivercityrealty.netlify.app/*   https://fsrivercityrealty.com/:splat  301!
+https://fsrivercityrealty.netlify.app/*  https://fsrivercityrealty.com/:splat  301!
+http://fsrivercityrealty.netlify.app/*   https://fsrivercityrealty.com/:splat  301!
 
 # ─── Old WordPress URLs → new site ───────────────────────────────
 # Source: fsrivercityrealty.com/wp-sitemap-posts-page-1.xml (10 URLs)
