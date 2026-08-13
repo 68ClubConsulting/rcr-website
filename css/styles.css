@@ -73,7 +73,13 @@ body { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; color: #
 }
 .rcr-hero-bg {
   position: absolute; inset: 0;
-  background-image: url("https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&q=80");
+  background-image: url("https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1600&q=80");
+  /* If this image reads wrong for the market, swap the ID above. Alternates
+     that are not used anywhere else on either site:
+       photo-1598228723793-52759bba239c
+       photo-1576941089067-2de3c901e126
+       photo-1580216643062-cf460548a66a
+     Better still: replace with a real local photo once Aimee sends one. */
   background-size: cover; background-position: center; opacity: 0.22;
 }
 .rcr-hero-content { position: relative; z-index: 2; text-align: center; width: 100%; max-width: 660px; }
@@ -350,6 +356,16 @@ body { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; color: #
   .rcr-idx-widget-wrap .idx-listings-showcase__properties {
     grid-template-columns: 1fr !important;
   }
+}
+
+
+/* ── IDX widget: hide the "View All" bar ──
+   The Listings Showcase widget renders a grey bar above the cards. The
+   cards live in .idx-listings-showcase__properties, so anything else that
+   is a direct child of the showcase is chrome we don't want. Written this
+   way because the bar's own class name is not documented anywhere. */
+.rcr-idx-widget-wrap .idx-listings-showcase > *:not(.idx-listings-showcase__properties) {
+  display: none !important;
 }
 
 /* ── RESPONSIVE ── */
