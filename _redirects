@@ -39,6 +39,17 @@ http://fsrivercityrealty.netlify.app/*   https://fsrivercityrealty.com/:splat  3
 /newly-listed-homes-for-sale   https://homes.fsrivercityrealty.com/idx/results/homes?idxID=d124&pt=1&add=7&a_propStatus[]=Active&srt=newest   301
 /newly-listed-homes-for-sale/  https://homes.fsrivercityrealty.com/idx/results/homes?idxID=d124&pt=1&add=7&a_propStatus[]=Active&srt=newest   301
 
+# ─── Old IDX URLs on the main domain ─────────────────────────────
+# The previous site served IDX pages from fsrivercityrealty.com rather than
+# the homes. subdomain. Same structure as CFR, which got these rules first.
+# Wildcards rather than one rule per URL — :splat carries the rest of the
+# path and Netlify preserves the query string automatically.
+#
+# These do NOT touch /idx-wrapper/ — that path is matched only by a literal
+# /idx/ prefix, which /idx-wrapper/ does not have.
+/idx/*  https://homes.fsrivercityrealty.com/idx/:splat  301
+/i/*    https://homes.fsrivercityrealty.com/i/:splat    301
+
 # NOTE: /idx-wrapper/ is deliberately NOT redirected. It is served by
 # idx-wrapper/index.html so IDX Broker's Global wrapper URL keeps working
 # unchanged after DNS moves. IDX cannot follow redirects.
